@@ -1,4 +1,4 @@
-import argparse, sys, re
+import argparse, sys, re, os
 
 def hexColor(rgb):
     if len(rgb) != 6:
@@ -16,19 +16,24 @@ def getArgs():
     parser.add_argument('oldFile', help='source sprite file path')
     parser.add_argument('newFile', help='target sprite file path')
     parser.add_argument('-C','--clubs',dest='club',
-                        help = 'New club color', type = hexColor)
+                        help = 'New club color', type = hexColor, action = 'append')
     parser.add_argument('-D','--diamonds',dest='diamond',
-                        help='New diamond color', type = hexColor)
+                        help='New diamond color', type = hexColor, action = 'append')
     parser.add_argument('-H','--hearts',dest='heart',
-                        help='New heart color', type = hexColor)
+                        help='New heart color', type = hexColor, action = 'append')
     parser.add_argument('-S','--spades',dest='spade',
-                        help='New spade color', type = hexColor)
+                        help='New spade color', type = hexColor, action = 'append')
     parser.add_argument('-B','--background',dest='background',
-                        help = 'New card background color', type = hexColor)
+                        help = 'New card background color', type = hexColor, action = 'append')
     
     args = vars(parser.parse_args(sys.argv[1:]))
     if len(args) == 2:
-        raise Exception("You must change at least one color.")
+        print("You must change at least one color.")
+        exit()
+    for key in {'club', 'diamond', 'heart', 'spade', 'background'}:
+        if key in args and len(args[key]) > 1:
+            print("Multiple new colors specified for %ss"%key)
+            exit()
     return args
 
 def getRGB(suit,text):
@@ -43,8 +48,18 @@ def getRGB(suit,text):
 
 def main():
     args = getArgs()
-    print(args)
-    with open(args['oldFile']) as fin, open(args['newFile'],'w') as fout:
+    try:
+        fin = open(args['oldFile'])
+    except OSError:
+        print('Cannot read file: %s'%args['oldFile'])
+        exit()
+    try:
+        fout = open(args['newFile'],'w')
+    except OSError:
+        print('Cannot create file: %s for writing'%args['newFile'])
+        exit()
+
+    with fin, fout:
         text = fin.read()
         for color in args:
             if 'File' in color:continue
@@ -53,7 +68,6 @@ def main():
             print(color, oldColor, newColor)
             text = re.sub(oldColor, newColor, text)
         fout.write(text)
-    fout.close()
                     
 if __name__ == '__main__':
     main()
