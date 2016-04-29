@@ -55,26 +55,19 @@ subfolders of the Decks folder.
 
 CHANGING COLORS
 
-python cardColors.py [-h] [-C CLUB] [-D DIAMOND] [-H HEART] [-S SPADE]
-                     [-B BACKGROUND]
-                     oldFile newFile
+python cardColors.py [-h] [-C CLUB] [-D DIAMOND] [-H HEART] [-S SPADE] [-B BACKGROUND] oldFile newFile
 
 positional arguments:
-  oldFile               source sprite file path
-  newFile               target sprite file path
+  oldFile            source sprite file path
+  newFile            target sprite file path
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -C CLUB, --clubs CLUB
-                        New club color
-  -D DIAMOND, --diamonds DIAMOND
-                        New diamond color
-  -H HEART, --hearts HEART
-                        New heart color
-  -S SPADE, --spades SPADE
-                        New spade color
-  -B BACKGROUND, --background BACKGROUND
-                        New card background color
+  -h, --help                             show this help message and exit
+  -C CLUB, --clubs CLUB                  New club color
+  -D DIAMOND, --diamonds DIAMOND         New diamond color
+  -H HEART, --hearts HEART               New heart color
+  -S SPADE, --spades SPADE               New spade color
+  -B BACKGROUND, --background BACKGROUND New card background color
                         
 The new colors should be given in six-character RGB format.  You can change as
 many colors as you like.  
@@ -93,24 +86,22 @@ python exportPNG.py [-h] [-s] [-o] [-w WIDTH] [-i INKSCAPE] source folder
 Export SVG cards to PNG files
 
 positional arguments:
-  source                source sprite file path
-  folder                parent directory for png folder
+  source    source sprite file path
+  folder    parent directory for png folder
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -s, --sprite          create sprite sheet also
-  -o, --sprite_only     create sprite sheet only
-  -w WIDTH, --width WIDTH
-                        image width (default 75 pixels)
-  -i INKSCAPE, --inkscape INKSCAPE
-                        path to inkscape
+  -h, --help                       show this help message and exit
+  -s, --sprite                     create sprite sheet also
+  -o, --sprite_only                create sprite sheet only
+  -w WIDTH, --width WIDTH          image width (default 75 pixels)
+  -i INKSCAPE, --inkscape INKSCAPE path to inkscape
 
 The folder argument is the name folder that will contain a "pngs" subfolder into which
 the PNG files will be written.  It will be created if it doesn't exist.  The --width
 argument controls the width of the cards, both for individual files and for sprite 
 sheets.  The --sprite parameter indicates that a sprite sheet should be produced in
-addition to the individual cards.  If the --o parameter is given, only the sprite
-sheet will be produced. 
+addition to the individual cards.  If the --sprite_only parameter is given, only the 
+sprite sheet will be produced. 
 
 EXPORTING SVG FILES
 
@@ -123,9 +114,8 @@ positional arguments:
   folder                parent directory for svg folder
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -i INKSCAPE, --inkscape INKSCAPE
-                        path to inkscape 
+  -h, --help                          show this help message and exit
+  -i INKSCAPE, --inkscape INKSCAPE    path to inkscape 
                         
 The folder argument is the name folder that will contain a "svgs" subfolder into which
 the SVG files will be written.  It will be created if it doesn't exist.  Due to known bug
