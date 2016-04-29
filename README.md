@@ -153,6 +153,9 @@ usage
 -----
 
     python exportSVG.py [-h] [-i INKSCAPE] source folder
+    
+arguments
+---------
 
 **positional arguments:
 
