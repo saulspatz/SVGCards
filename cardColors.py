@@ -31,9 +31,12 @@ def getArgs():
         print("You must change at least one color.")
         exit()
     for key in {'club', 'diamond', 'heart', 'spade', 'background'}:
-        if key in args and len(args[key]) > 1:
-            print("Multiple new colors specified for %ss"%key)
-            exit()
+        if key in args:
+            if len(args[key]) > 1:
+                print("Multiple new colors specified for %ss"%key)
+                exit()
+            else:
+                args[key] = args[key][0]
     return args
 
 def getRGB(suit,text):
