@@ -1,7 +1,9 @@
-These are public-domain jumbo index playing card decks.  
-Everything in this repository has been placed by the author in the public domain.
-You can copy, modify, distribute, bend, spindle, and mutilate the work, even for 
-commercial puposes, all without asking permission
+SVGCards
+========
+
+Public-domain jumbo index playing card decks with two- and four-color suits.  Decks
+are available with both traditional vertical indices and also with side-by-side
+indices.  
 
 It is difficult to find public domain playing cards, let alone ones with jumbo indexes.
 Particularly for solitaire games, jumbo index decks are desirable.
@@ -11,30 +13,25 @@ with the suit symbol to the right of the rank symbol.  I have found that in soli
 games like spider, where the piles can get very long, that I prefer the horizontal
 layout so that the vertcal offset between two cards in a pile can be smaller.
 
-I am not an artist, and I did not make any of the graphics on the picture cards,
-the jokers, or the backs.  The pictures come from [a playing card set by Byron Knoll] 
-(https://commons.wikimedia.org/wiki/Category:Playing_cards_set_by_Byron_Knoll)
-and the backs and jokers come from 
-www.openclipart.org.  I may have made small changes to some of these elements.  
-All the assets I retrieved from the Web were stated to be in the public domain.
-
 The suits on some of the decks come in four colors.  No doubt, better choices are 
 possible; once again, I am not an artist.  The python script cardColors.py, detailed 
 below, can be used to modify the suit colors.  If you are an artist, and come up with 
 a better scheme, I would urge you to make it freely available, though of course, 
 you need not.
 
-Two other python scripts are included: 
+Three python scripts are included: 
 
++    cardColors.py for editing the suit colors, 
 +    exportSVG.py for extracting individual cards as SVG files from the sprite sheets, 
 +    exportPNG.py for extracting the individual cards as PNG files. 
 
-In order for these scripts to be useful, Inkscape must be installed.  
+In order for the last two scripts to be useful, Inkscape must be installed.  
 Inkscape is free, open-source software, and may be downloaded from https://inkscape.org.
 
 Details are given below.
 
-###GRAPHICS FILES
+Graphics Files
+============== 
 
 The Decks folder contains four subfolders:
 
@@ -49,30 +46,39 @@ traditionally the "Horizontal" folders have them side-by-side.  Each of older co
 a sprite sheet named "sprite.svg," and folders named "pngs", "svgs", and "gifs"
 containing PNG, SVG, and GIF images of the individual cards.  The pngs and gifs
 folder each contain a sprite file also.  The SVG cards are 210 pixels wide by 315 pixels
-high.  The PNG and GIF carsd are 75 pixels wide by 315 pixels high.     
+high.  The PNG and GIF cards are 75 pixels wide by 315 pixels high.     
 
-###EDITING
+Editing
+-------
 
-If you just want to change the colors of the suits, it's best to use cardColors.py.
-If you want to make more basic changes, using Inkscape, you should note that
+If you just want to change the colors of the suits, it's easiest to use cardColors.py.
+If you want to make more basic changes, using Inkscape say, you should note that
 each card has an ID such as "heart6" or "diamondQueen".  When you ungroup
-the card to work on its elements, this ID is lost.  You should restore it after 
-re-grouping the elements, as exportSVG.py depends on their existence.  (I imagine
+the card to work on its elements, this ID is lost.  You should restore the ID's after 
+re-grouping the elements, as exportSVG.py and exportPNG.py depend on them.  (I imagine
 that Illustrator works similarly, but I've never used it.)
 
-To edit the graphics, edit the sprite.svg files in the Horizontal and Vertical 
-subfolders of the Decks folder.
+To edit the graphics, edit the sprite.svg files in the subfolders of the Decks folder.
 
-###CHANGING COLORS
+CardColors.py
+=============
 
-    python cardColors.py [-h] [-C CLUB] [-D DIAMOND] [-H HEART] [-S SPADE] [-B BACKGROUND] oldFile newFile  
+Edit the suit colors on the SVG sprite sheets.
 
-positional arguments:  
+usage
+-----
+
+    cardColors.py oldFile newFile [options]
+    
+arguments
+---------  
+
+**positional arguments:**  
 
      oldFile            source sprite file path  
      newFile            target sprite file path  
 
-optional arguments: 
+**optional arguments:** 
 
     -h, --help                             show this help message and exit  
     -C CLUB, --clubs CLUB                  New club color  
@@ -82,11 +88,17 @@ optional arguments:
     -B BACKGROUND, --background BACKGROUND New card background color  
                         
 The new colors should be given in six-character RGB format.  You can change as
-many colors as you like.  
+many colors as you like. 
 
-Example:
+requirements
+------------
 
-    python cardColors.py [path1]/sprite.svg [path2]/sprite.svg -C 00ff00 -B ffffff
+This program requires python.  It has been tested under python 2.7 and 3.5. 
+
+example
+-------
+
+    cardColors.py [path1]/sprite.svg [path2]/sprite.svg -C 00ff00 -B ffffff
 
 will create a new sprite sheet with bright green clubs and white card backgrounds,
 where path1 and path2 are appropriate paths to the input and output folders.
@@ -150,7 +162,26 @@ Inkscape does not provide a way to extract objects as GIF files; you have to mak
 files and convert them to GIF.  There are lots of free programs available to do this:
 Irfanview, Imagemagick, and the Gimp, to name a few.  I have posted GIF files, but
 not attempted to provide a conversion script, precisely because of the large number
-of choices.      
+of choices.
+
+Acknowledgements
+----------------
+
+I am not an artist, and I did not make any of the graphics on the picture cards,
+the jokers, or the backs.  The pictures come from [a playing card set by Byron Knoll] 
+(https://commons.wikimedia.org/wiki/Category:Playing_cards_set_by_Byron_Knoll)
+and the backs and jokers come from  www.openclipart.org.  I made small changes 
+to some of these elements, but no consequential ones.  
+All the assets I retrieved from the Web were stated to be in the public domain.
+
+      
+
+License
+-------
+
+Everything in this repository has been placed by the author in the public domain.
+You can copy, modify, distribute, bend, spindle, and mutilate the work, even for 
+commercial puposes, all without asking permission.
 
  
 
