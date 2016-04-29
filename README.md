@@ -18,10 +18,10 @@ and the backs and jokers come from
 www.openclipart.org.  I may have made small changes to some of these elements.  
 All the assets I retrieved from the Web were stated to be in the public domain.
 
-The suits on some of the decks come in four colors.  No doubt, better choices are possible;
-once again, I am not an artist.  The python script cardColors.py, detailed below,
-can be used to modify the suit colors.  If you are an artist, and come up with a 
-better scheme, I would urge you to make it freely available, though of course, 
+The suits on some of the decks come in four colors.  No doubt, better choices are 
+possible; once again, I am not an artist.  The python script cardColors.py, detailed 
+below, can be used to modify the suit colors.  If you are an artist, and come up with 
+a better scheme, I would urge you to make it freely available, though of course, 
 you need not.
 
 Two other python scripts are included: 
@@ -36,11 +36,20 @@ Details are given below.
 
 ###GRAPHICS FILES
 
-The Decks fold contains two subfolders, Vertical and Horizontal, containing cards
-with the pips arranged traditionally and side-by-side.  Each of the folders contains
+The Decks folder contains four subfolders:
+
++    Vertical2 
++    Vertical4 
++    Horizontal2 
++    Horizontal4.
+
+As you've guessed, the folders ending in "2" contain two-color suits, and those ending
+in "4" have four-color suits.  The "Vertical" folders have the indices arranged 
+traditionally the "Horizontal" folders have them side-by-side.  Each of older contains
 a sprite sheet named "sprite.svg," and folders named "pngs", "svgs", and "gifs"
 containing PNG, SVG, and GIF images of the individual cards.  The pngs and gifs
-folder each contain a sprite file also.     
+folder each contain a sprite file also.  The SVG cards are 210 pixels wide by 315 pixels
+high.  The PNG and GIF carsd are 75 pixels wide by 315 pixels high.     
 
 ###EDITING
 
