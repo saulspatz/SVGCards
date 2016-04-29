@@ -87,8 +87,8 @@ arguments
     -S SPADE, --spades SPADE               New spade color  
     -B BACKGROUND, --background BACKGROUND New card background color  
                         
-The new colors should be given in six-character RGB format.  You can change as
-many colors as you like. 
+    The new colors should be given in six-character RGB format.  You can change as
+    many colors as you like. 
 
 requirements
 ------------
@@ -176,8 +176,14 @@ you can correct it by opening the file in Inkscape, finding the drawing, (
 View/Zoom/Drawing from the menu) changing the Y-coordinate to 0 on the toolbar at the 
 top of the window, and saving the file.
 
-This process is, unfortunately, very slow, but it's still better than manually copying 
+The process is, unfortunately, very slow, but it's still better than manually copying 
 and pasting all the cards.
+
+requirements
+------------
+
+This program requires python and Inkscape.  It has been tested with python 2.7 and 
+python 3.5, and with Inkscape .91.  All testing has been on OS X 10.10 (Yosemite). 
 
 Extracting GIF's
 ================
