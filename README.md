@@ -12,8 +12,8 @@ games like spider, where the piles can get very long, that I prefer the horizont
 layout so that the vertcal offset between two cards in a pile can be smaller.
 
 I am not an artist, and I did not make any of the graphics on the picture cards,
-the jokers, or the backs.  The pictures come from
-https://commons.wikimedia.org/wiki/Category:Playing_cards_set_by_Byron_Knoll
+the jokers, or the backs.  The pictures come from [a playing card set by Byron Knoll] 
+(https://commons.wikimedia.org/wiki/Category:Playing_cards_set_by_Byron_Knoll)
 and the backs and jokers come from 
 www.openclipart.org.  I may have made small changes to some of these elements.  
 All the assets I retrieved from the Web were stated to be in the public domain.
