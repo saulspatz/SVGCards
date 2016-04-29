@@ -116,7 +116,7 @@ usage
 arguments
 ---------
 
-**positional arguments:  
+**positional arguments:**  
 
     source    source sprite file path  
     folder    parent directory for png folder 
@@ -124,7 +124,7 @@ arguments
     The folder argument is the name folder that will contain a "pngs" subfolder into 
     which the PNG files will be written.  It will be created if it doesn't exist.
 
-**optional arguments:
+**optional arguments:**
 
     -h, --help                       show this help message and exit  
     -s, --sprite                     create sprite sheet also   
@@ -157,7 +157,7 @@ usage
 arguments
 ---------
 
-**positional arguments:
+**positional arguments:**
 
     source                source sprite file path
     folder                parent directory for svg folder
@@ -165,7 +165,7 @@ arguments
     The folder argument is the name folder that will contain a "svgs" subfolder into 
     which the SVG files will be written.  It will be created if it doesn't exist.
 
-**optional arguments:
+**optional arguments:**
 
     -h, --help                          show this help message and exit  
     -i INKSCAPE, --inkscape INKSCAPE    path to inkscape  
