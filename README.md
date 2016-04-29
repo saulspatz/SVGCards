@@ -18,7 +18,7 @@ and the backs and jokers come from
 www.openclipart.org.  I may have made small changes to some of these elements.  
 All the assets I retrieved from the Web were stated to be in the public domain.
 
-The suits on the decks come in four colors.  No doubt, better choices are possible;
+The suits on some of the decks come in four colors.  No doubt, better choices are possible;
 once again, I am not an artist.  The python script cardColors.py, detailed below,
 can be used to modify the suit colors.  If you are an artist, and come up with a 
 better scheme, I would urge you to make it freely available, though of course, 
