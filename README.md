@@ -103,18 +103,28 @@ example
 will create a new sprite sheet with bright green clubs and white card backgrounds,
 where path1 and path2 are appropriate paths to the input and output folders.
 
-###EXPORTING PNG FILES
+exportPNG.py
+============
 
-    python exportPNG.py [-h] [-s] [-o] [-w WIDTH] [-i INKSCAPE] source folder
+Export SVG cards files from sprite sheet to PNG files, or make a PNG sprite sheet.
 
-Export SVG cards to PNG files
+usage
+-----
 
-positional arguments:  
+    exportPNG.py source folder [options]
+
+arguments
+---------
+
+**positional arguments:  
 
     source    source sprite file path  
     folder    parent directory for png folder 
+    
+    The folder argument is the name folder that will contain a "pngs" subfolder into 
+    which the PNG files will be written.  It will be created if it doesn't exist.
 
-optional arguments:
+**optional arguments:
 
     -h, --help                       show this help message and exit  
     -s, --sprite                     create sprite sheet also   
@@ -122,41 +132,52 @@ optional arguments:
     -w WIDTH, --width WIDTH          image width (default 75 pixels)  
     -i INKSCAPE, --inkscape INKSCAPE path to inkscape  
 
-The folder argument is the name folder that will contain a "pngs" subfolder into which
-the PNG files will be written.  It will be created if it doesn't exist.  The --width
-argument controls the width of the cards, both for individual files and for sprite 
-sheets.  The --sprite parameter indicates that a sprite sheet should be produced in
-addition to the individual cards.  If the --sprite_only parameter is given, only the 
-sprite sheet will be produced. 
+    The --width argument controls the width of the cards, both for individual files and 
+    for sprite sheets.  
+    The --sprite parameter indicates that a sprite sheet should be produced in addition 
+    to the individual cards.  
+    If the --sprite_only parameter is given, only the sprite sheet will be produced.
 
-###EXPORTING SVG FILES
+requirements
+------------
+
+This program requires python and Inkscape.  It has been tested with python 2.7 and 
+python 3.5, and with Inkscape .91.  All testing has been on OS X 10.10 (Yosemite).  
+
+exportSVG.py
+============
+
+Extract individual SVG cards from sprite sheet.
+
+usage
+-----
 
     python exportSVG.py [-h] [-i INKSCAPE] source folder
 
-Extract individual SVG cards
-
-positional arguments:
+**positional arguments:
 
     source                source sprite file path
     folder                parent directory for svg folder
+    
+    The folder argument is the name folder that will contain a "svgs" subfolder into 
+    which the SVG files will be written.  It will be created if it doesn't exist.
 
-optional arguments:
+**optional arguments:
 
     -h, --help                          show this help message and exit  
     -i INKSCAPE, --inkscape INKSCAPE    path to inkscape  
                         
-The folder argument is the name folder that will contain a "svgs" subfolder into which
-the SVG files will be written.  It will be created if it doesn't exist.  Due to known bug
-number [#1306662] (https://bugs.launchpad.net/inkscape/+bug/1306662) the extracted
-drawings are not correctly positioned on the page.  Until this is fixed, you can correct
-it by opening the file in Inkscape, finding the drawing, (View/Zoom/Drawing from the
-menu) changing the Y-coordinate to 0 on the toolbar at the top of the window, and saving
-the file.
+Due to known bug [#1306662] (https://bugs.launchpad.net/inkscape/+bug/1306662) 
+the extracted drawings are not correctly positioned on the page.  Until this is fixed, 
+you can correct it by opening the file in Inkscape, finding the drawing, (
+View/Zoom/Drawing from the menu) changing the Y-coordinate to 0 on the toolbar at the 
+top of the window, and saving the file.
 
 This process is, unfortunately, very slow, but it's still better than manually copying 
 and pasting all the cards.
 
-###EXTRACTING GIFS
+Extracting GIF's
+================
 
 Inkscape does not provide a way to extract objects as GIF files; you have to make PNG
 files and convert them to GIF.  There are lots of free programs available to do this:
@@ -174,13 +195,12 @@ and the backs and jokers come from  www.openclipart.org.  I made small changes
 to some of these elements, but no consequential ones.  
 All the assets I retrieved from the Web were stated to be in the public domain.
 
-      
-
 License
 -------
 
-Everything in this repository has been placed by the author in the public domain.
-You can copy, modify, distribute, bend, spindle, and mutilate the work, even for 
+[Saul Spatz](https://github.com/saulspatz) created these scripts and graphics.
+Everything in this repository has been placed by the author in the public domain.  
+You can copy, modify, distribute, fold, spindle, and mutilate the work, even for 
 commercial puposes, all without asking permission.
 
  
