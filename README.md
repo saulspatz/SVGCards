@@ -179,12 +179,34 @@ top of the window, and saving the file.
 The process is, unfortunately, very slow, but it's still better than manually copying 
 and pasting all the cards.
 
+rename.py
+========
+
+Rename the files to have names like TD.ext and AS.ext instead of diamondTen.ext and spadeAce.ext, for example.
+
+usage
+-----
+    
+    rename.py [-h] source target
+    
+arguments
+--------
+
+**positional arguments:**
+
+  
+        source      source directory
+        target      target directory
+
+**optional arguments:**
+ 
+        -h, --help  show this help message and exit
+
 requirements
-------------
+------------------
 
-This program requires python and Inkscape.  It has been tested with python 2.7 and 
-python 3.5, and with Inkscape .91.  All testing has been on OS X 10.10 (Yosemite). 
-
+This program requires python.
+ 
 Extracting GIF's
 ================
 
