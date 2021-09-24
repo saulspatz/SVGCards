@@ -42,7 +42,7 @@ The Decks folder contains four subfolders:
 
 As you've guessed, the folders ending in "2" contain two-color suits, and those ending
 in "4" have four-color suits.  The "Vertical" folders have the indices arranged 
-traditionally the "Horizontal" folders have them side-by-side.  Each of older contains
+traditionally the "Horizontal" folders have them side-by-side.  Each folder contains
 a sprite sheet named "sprite.svg," and folders named "pngs", "svgs", and "gifs"
 containing PNG, SVG, and GIF images of the individual cards.  The pngs and gifs
 folder each contain a sprite file also.  The SVG cards are 210 pixels wide by 315 pixels
@@ -69,7 +69,7 @@ usage
 -----
 
     cardColors.py oldFile newFile [options]
-    
+
 arguments
 ---------  
 
@@ -131,7 +131,7 @@ arguments
     -o, --sprite_only                create sprite sheet only  
     -w WIDTH, --width WIDTH          image width (default 75 pixels)  
     -i INKSCAPE, --inkscape INKSCAPE path to inkscape  
-
+    
     The --width argument controls the width of the cards, both for individual files and 
     for sprite sheets.  
     The --sprite parameter indicates that a sprite sheet should be produced in addition 
@@ -153,7 +153,7 @@ usage
 -----
 
     python exportSVG.py [-h] [-i INKSCAPE] source folder
-    
+
 arguments
 ---------
 
@@ -169,7 +169,7 @@ arguments
 
     -h, --help                          show this help message and exit  
     -i INKSCAPE, --inkscape INKSCAPE    path to inkscape  
-                        
+
 Due to known bug [#1306662] (https://bugs.launchpad.net/inkscape/+bug/1306662) 
 the extracted drawings are not correctly positioned on the page.  Until this is fixed, 
 you can correct it by opening the file in Inkscape, finding the drawing, (
@@ -186,27 +186,27 @@ Rename the files to have names like TD.ext and AS.ext instead of diamondTen.ext 
 
 usage
 -----
-    
+
     rename.py [-h] source target
-    
+
 arguments
 --------
 
 **positional arguments:**
 
-  
+
         source      source directory
         target      target directory
 
 **optional arguments:**
- 
+
         -h, --help  show this help message and exit
 
 requirements
 ------------------
 
 This program requires python.
- 
+
 Extracting GIF's
 ================
 
