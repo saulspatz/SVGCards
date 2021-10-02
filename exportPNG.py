@@ -1,4 +1,4 @@
-import os, sys, re, subprocess, argparse
+import os, sys, subprocess, argparse
 
 def getArgs():
     parser = argparse.ArgumentParser(description='Export SVG cards to PNG files')
@@ -55,7 +55,7 @@ def main():
     try:
         for card in cards:
             png = os.path.join(target,card+'.png')
-            cmd = [inkscape, source, '--without-gui',
+            cmd = [inkscape, source,
                         '--export-id=%s'%card,
                         '--export-png=%s'%png, 
                         '--export-width=%s'%width]   
@@ -64,7 +64,7 @@ def main():
             sprite = os.path.split(source)[-1]
             png = os.path.join(target,os.path.splitext(sprite)[0]+'.png')
             width *= 14
-            cmd = [inkscape, source,  '--without-gui',
+            cmd = [inkscape, source,
                         '--export-png=%s'%png, 
                        '--export-width=%s'%width]
             subprocess.call(cmd, universal_newlines=True) 
