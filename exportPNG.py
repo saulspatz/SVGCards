@@ -24,6 +24,7 @@ def getInkscape():
     
 def main():
     args = getArgs()    
+    print(os.getcwd())
     source = os.path.abspath(args.source)
     if not os.path.exists(source):
         print('File not found: %s'%source)
@@ -57,21 +58,24 @@ def main():
             png = os.path.join(target,card+'.png')
             cmd = [inkscape, source,
                         '--export-id=%s'%card,
-                        '--export-png=%s'%png, 
+                         '--export-filename=%s'%png,
                         '--export-width=%s'%width]   
             subprocess.call(cmd, universal_newlines=True) 
+            #print(cmd)
         if args.sprite or args.sprite_only:
             sprite = os.path.split(source)[-1]
             png = os.path.join(target,os.path.splitext(sprite)[0]+'.png')
             width *= 14
             cmd = [inkscape, source,
-                        '--export-png=%s'%png, 
+                        '--export-filename=%s'%png,
                        '--export-width=%s'%width]
             subprocess.call(cmd, universal_newlines=True) 
+            #print(cmd)
     except OSError:
         print('Inkscape program not found.  \nUse --inkscape option or edit the source.')
         
 if __name__ == '__main__':
+    print(sys.argv[1:])
     main()
     
     
