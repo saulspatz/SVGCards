@@ -48,9 +48,9 @@ def main():
     cards = [s+r for s in suits for r in ranks ] + others   
     for card in cards:
         svg= os.path.join(target,card+'.svg')
-        cmd = [inkscape, source, '--without-gui',
+        cmd = [inkscape, source, 
                     '--export-id=%s'%card,
-                    '--export-plain-svg=%s'%svg,
+                    '--export-filename=%s'%svg,
                     '--export-id-only']              
         print('Extracting %s.svg'%card)
         subprocess.call(cmd, universal_newlines=True) 
