@@ -55,22 +55,22 @@ def main():
         cards = []
     try:
         for card in cards:
+            print('Extracting %s'%card)
             png = os.path.join(target,card+'.png')
             cmd = [inkscape, source,
                         '--export-id=%s'%card,
                          '--export-filename=%s'%png,
                         '--export-width=%s'%width]   
             subprocess.call(cmd, universal_newlines=True) 
-            #print(cmd)
         if args.sprite or args.sprite_only:
+            print('Convert sprite sheet')
             sprite = os.path.split(source)[-1]
             png = os.path.join(target,os.path.splitext(sprite)[0]+'.png')
             width *= 14
             cmd = [inkscape, source,
                         '--export-filename=%s'%png,
                        '--export-width=%s'%width]
-            subprocess.call(cmd, universal_newlines=True) 
-            #print(cmd)
+            subprocess.call(cmd, universal_newlines=True)
     except OSError:
         print('Inkscape program not found.  \nUse --inkscape option or edit the source.')
         
